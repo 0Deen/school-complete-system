@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="../../styles/academics.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="classes" class="section">
+                <h2>Class Section</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchClass" placeholder="Search Class info...">
+                </div>
+
+                <button class="add-btn" id="addClassButton" onclick="toggleModal('#addClassForm', '#modalOverlayClass')">+ Add Class</button>
+            
+                <div class="modal-overlay" id="modalOverlayClass"></div>
+                <div class="modal class-form" id="addClassForm">
+                    <span class="close" onclick="toggleModal('#addClassForm', '#modalOverlayClass')">&times;</span>
+                    <h3>Add Class</h3>
+                    <form id="classForm">
+                        <label for="blockSelect">Block</label>
+                        <select id="blockSelect" required>
+                            <option value="">Select a block</option>
+                        </select>
+
+                        <label for="blockValue">Block Level</label>
+                        <select name="blockValue" id="blockValue">
+                            <option value="">Select Block level</option>
+                        </select>
+                
+                        <label for="streamSelect">Stream</label>
+                        <select id="streamSelect" required>
+                            <option value="">Select a stream</option>
+                        </select>
+                
+                        <label for="teacherSelect">Teacher</label>
+                        <select id="teacherSelect" required>
+                            <option value="">Select Teacher</option>
+                        </select>
+                
+                        <button type="submit" onclick="initializeAddClassForm()">Add Class</button>
+                        <button type="button" onclick="toggleModal('#addClassForm', '#modalOverlayClass')">Cancel</button>
+                    </form>
+                </div>
+            
+                <div class="modal-overlay" id="modalOverlayEdit"></div>
+                <div class="modal class-form" id="editClassForm">
+                    <span class="close" onclick="toggleModal('#editClassForm', '#modalOverlayEdit')">&times;</span>
+                    <h3>Edit Class</h3>
+                    <form id="editClassForm">
+                        <input type="hidden" id="editClassId">
+                        
+                        <label for="editBlockSelect">Block</label>
+                        <select id="editBlockSelect" required>
+                        </select>
+
+                        <label for="editBlockValue">Block Level</label>
+                        <select name="editBlockValue" id="editBlockValue">
+                            <option value="">Select Block level</option>
+                        </select>
+                
+                        <label for="editStreamSelect">Stream</label>
+                        <select id="editStreamSelect" required>
+                        </select>
+                
+                        <label for="editTeacherSelect">Teacher</label>
+                        <select id="editTeacherSelect" required></select>
+                
+                        <button type="submit" onclick="initializeEditClassForm()">Save Changes</button>
+                        <button type="button" onclick="toggleModal('#editClassForm', '#modalOverlayEdit')">Cancel</button>
+                    </form>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Block Name</th>
+                            <th>Stream Name</th>
+                            <th>Teacher Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="class-holder">
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/academics/classes.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('academics');
+    </script>
+</body>
+</html>

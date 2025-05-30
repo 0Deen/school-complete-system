@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Data</title>
+    <link rel="stylesheet" href="../../styles/externalData.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="importBankStatement" class="section">
+                <h2>Import Bank Statement</h2>
+            
+                <button class="add-report-btn" id="addReportButton" onclick="toggleModal('#bankStatementModal', '#modalOverlay')">+ Import Bank Statement</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="bankStatementModal">
+                    <span id="closeBankStatementModal" class="close" onclick="toggleModal('#bankStatementModal', '#modalOverlay')">&times;</span>
+                    <h3>Import Bank Statement</h3>
+                    <form id="bankStatementForm" onsubmit="importBankStatement(event)">
+                        <label for="bankStatementFile">Upload Bank Statement (CSV or Excel):</label>
+                        <input type="file" id="bankStatementFile" name="bankStatementFile" accept=".csv, .xls, .xlsx" required>
+                        <div class="modal-footer">
+                            <button type="submit">Import</button>
+                            <button type="button" onclick="toggleModal('#bankStatementModal', '#modalOverlay')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/externalData/bankStatement.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('externalData')
+    </script>
+</body>
+</html>

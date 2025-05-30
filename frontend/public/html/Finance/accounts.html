@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="../../styles/finance.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="accounts" class="section">
+                <h2>Accounts Management</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchAccount" placeholder="Search...">
+                </div>
+                
+                <div class="search-container">
+                    <select name="bank" id="bank"></select>
+                </div>
+
+                <button class="add-account-btn" id="addAccountButton" onclick="toggleModal('#addAccountModal', '#modalOverlay')">+ Add Account</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="addAccountModal">
+                    <h3>Add Account</h3>
+
+                    <span class="close" onclick="toggleModal('#addAccountModal', '#modalOverlay')">&times;</span>
+
+                    <label for="selectBank">Bank</label>
+                    <select name="selectBank" id="addBank"></select>
+
+                    <label for="addNumber">Account Number</label>
+                    <input type="text" id="addNumber" placeholder="Account Number" autocomplete="off" required>
+
+                    <label for="addName">Account Name</label>
+                    <input type="text" id="addName" placeholder="Account Name" autocomplete="off" required>
+            
+                    <label for="balance">Account Balance</label>
+                    <input type="text" id="addBalance" placeholder="Account Balance" autocomplete="off" required>
+
+                    <button type="submit" onclick="addAccount()">Add Account</button>
+                    <button type="button" onclick="toggleModal('#addAccountModal', '#modalOverlay')">Cancel</button>
+                </div>
+            
+                <div class="modal" id="editModal">
+                    <h3>Edit Account</h3>
+                    
+                    <input type="hidden" name="accountId" id="accountId">
+
+                    <label for="editBank">Select Bank</label>
+                    <select name="editBank" id="editBank"></select>
+                    
+                    <label for="editAccountNumber">Account Number</label>
+                    <input type="text" id="editAccountNumber" placeholder="Account Number" autocomplete="off" required>
+
+                    <label for="modifyAccountName">Account Name</label>
+                    <input type="text" id="editName" placeholder="Account Name" autocomplete="off" required>
+            
+                    <label for="editBalance">Account Balance</label>
+                    <input type="text" id="editBalance" placeholder="Account Balance" autocomplete="off" required>
+        
+                    <button type="button" onclick="editAccount()">Save Changes</button>
+                    <button type="button" onclick="toggleModal('#editModal', '#modalOverlay')">Cancel</button>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bank</th>
+                            <th>Account Number</th>
+                            <th>Account Name</th>
+                            <th>Account Balance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="accounts-container">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/finance/accounts.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('finance')
+    </script>
+</body>
+</html>

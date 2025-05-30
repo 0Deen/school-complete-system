@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="../../styles/reports.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="container">
+                <div class="overview-container">
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/revenue.png" alt="Total Revenue">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Revenue</h3>
+                            <div class="count" id="totalRevenue">KES0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/expense.png" alt="Total Expenses">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Expenses</h3>
+                            <div class="count" id="totalExpenses">KES 0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/students.png" alt="Total Students">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Students</h3>
+                            <div class="count" id="totalStudents">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/payment history.png" alt="Outstanding Payments">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Outstanding Payments</h3>
+                            <div class="count" id="outstandingPayments">KES 0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/suppliers.png" alt="Active Suppliers">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Active Suppliers</h3>
+                            <div class="count" id="activeSuppliers">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/pending orders.png" alt="Pending Orders">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Pending Orders</h3>
+                            <div class="count" id="pendingOrders">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/recent payments.png" alt="Recent Payments">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Recent Payments</h3>
+                            <div class="count" id="recentPayments">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/pending payments.png" alt="Pending Payments">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Pending Payments</h3>
+                            <div class="count" id="pendingPayments">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/report/overview.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('report')
+    </script>
+</body>
+</html>

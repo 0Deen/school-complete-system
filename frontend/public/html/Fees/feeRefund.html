@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees</title>
+    <link rel="stylesheet" href="../../styles/fees.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="feeRefunds" class="section">
+                <h2>Fee Refunds</h2>
+            
+                <button id="addRefundBtn" class="add-fee-btn" onclick="toggleModal('#refundModal', '#modalOverlay')">+ Process Refund</button>
+            
+                <div id="modalOverlay" class="modal-overlay"></div>
+                <div id="refundModal" class="modal">
+                    <span class="close" onclick="toggleModal('#refundModal', '#modalOverlay')">&times;</span>
+                    <h3>Process Fee Refund</h3>
+                    <form id="feeRefundsForm">
+                        <label for="studentIdRefund">Student ID:</label>
+                        <input type="text" id="studentIdRefund" required>
+            
+                        <label for="refundAmount">Refund Amount:</label>
+                        <input type="number" id="refundAmount" required>
+            
+                        <label for="refundDate">Date:</label>
+                        <input type="date" id="refundDate" required>
+            
+                        <button type="submit">Process Refund</button>
+                        <button type="button" onclick="toggleModal('#refundModal', '#modalOverlay')">Cancel</button>
+                    </form>
+                </div>
+            
+                <table id="feeRefundsTable">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Refund Amount</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/fees/feeRefund.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('fees')
+    </script>
+</body>
+</html>

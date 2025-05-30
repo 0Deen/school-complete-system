@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Management Settings</title>
+    <link rel="stylesheet" href="../../styles/settings.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+
+        <div id="mainContent">
+            <div id="role-management" class="section">
+                <h2>Role Management Settings</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchRole" placeholder="Search...">
+                </div>
+
+                <button class="add-user-btn" id="addRoleButton" onclick="toggleModal('#addRoleModal', '#modalOverlay')">+ Add Role</button>
+
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <!-- <div class="modal" id="addRoleModal">
+                    <span class="close" onclick="toggleModal('#addRoleModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Role</h3>
+                    <label for="addName">Role Name</label>
+                    <input type="text" id="addName" name="addName" placeholder="Enter role name">
+    
+                    <label for="addRoleDescription">Role Description</label>
+                    <textarea id="addRoleDescription" name="addRoleDescription" rows="3" placeholder="Enter role description..."></textarea>
+    
+                    <label for="addRolePermissions">Assign Permissions</label>
+                    <select id="addRolePermissions" name="addRolePermissions" multiple>
+                    </select>
+    
+                    <button type="button" onclick="addRole()">Add Role</button>
+                    <button type="button" onclick="toggleModal('#addRoleModal', '#modalOverlay')">Cancel</button>
+                </div> -->
+
+                <!-- <div class="modal" id="editRoleModal">
+                    <span class="close" onclick="toggleModal('#editRoleModal', '#modalOverlay')">&times;</span>
+                    <h3>edit Role</h3>
+                    <label for="editName">Role Name</label>
+                    <input type="text" id="editName" name="editName">
+    
+                    <label for="editRoleDescription">Role Description</label>
+                    <textarea id="editRoleDescription" name="editRoleDescription"></textarea>
+    
+                    <label for="editRolePermissions">Assign Permissions</label>
+                    <select id="editRolePermissions" name="editRolePermissions" multiple>
+                    </select>
+    
+                    <button type="submit" onclick="editRole()">edit Role</button>
+                    <button type="button" onclick="toggleModal('#editRoleModal', '#modalOverlay')">Cancel</button>
+                </div> -->
+
+                <div class="modal" id="addRoleModal">
+                    <span class="close" onclick="toggleModal('#addRoleModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Role</h3>
+                    <div class="user-select">
+                        <label for="userDropdown">User</label>
+                        <select id="userDropdown"></select>
+                    </div>
+                
+                    <div id="roleAssignmentSection">
+                        <h3>Assign a Role</h3>
+                        <div id="roleAssignmentDiv">
+                            <div class="role-group">
+                                <h4>Available Roles</h4>
+                                <div class="role-option">
+                                    <input type="radio" id="admin" name="role" value="admin">
+                                    <label for="admin">Administrator</label>
+                                </div>
+                                <div class="role-option">
+                                    <input type="radio" id="teacher" name="role" value="teacher">
+                                    <label for="teacher">Teacher</label>
+                                </div>
+                                <div class="role-option">
+                                    <input type="radio" id="accountant" name="role" value="accountant">
+                                    <label for="accountant">Accountant</label>
+                                </div>
+                                <div class="role-option">
+                                    <input type="radio" id="student" name="role" value="student">
+                                    <label for="student">Student</label>
+                                </div>
+                                <div class="role-option">
+                                    <input type="radio" id="parent" name="role" value="parent">
+                                    <label for="parent">Parent</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="permissions">
+                                <h4>Assign Permissions for the Role</h4>
+                                <div class="permission-option">
+                                    <input type="checkbox" id="manageStudents" name="permissions" value="manageStudents">
+                                    <label for="manageStudents">Manage Students</label>
+                                </div>
+                                <div class="permission-option">
+                                    <input type="checkbox" id="viewReports" name="permissions" value="viewReports">
+                                    <label for="viewReports">View Reports</label>
+                                </div>
+                                <div class="permission-option">
+                                    <input type="checkbox" id="manageFees" name="permissions" value="manageFees">
+                                    <label for="manageFees">Manage Fees</label>
+                                </div>
+                            </div>
+                            <button type="button" class="save-btn">Save Role</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Description</th>
+                            <th>Permissions</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="roles-container">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/settings/roles.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('settings');
+    </script>
+</body>
+</html>

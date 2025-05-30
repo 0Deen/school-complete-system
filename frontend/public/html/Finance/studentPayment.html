@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="../../styles/finance.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="studentPayments" class="section active">
+                <h2>Student Payments</h2>
+                <button class="add-payment-btn" onclick="toggleModal('#addPaymentModal', '#paymentModalOverlay')">+ Record Payment</button>
+            
+                <div class="modal-overlay" id="paymentModalOverlay"></div>
+                <div class="modal" id="addPaymentModal">
+                    <h3>Record Student Payment</h3>
+            
+                    <label for="studentId">Student ID:</label>
+                    <input type="text" id="studentId" required>
+            
+                    <label for="paymentAmount">Payment Amount:</label>
+                    <input type="number" id="paymentAmount" required>
+            
+                    <label for="paymentDate">Payment Date:</label>
+                    <input type="date" id="paymentDate" required>
+            
+                    <button type="button" onclick="recordStudentPayment()">Record Payment</button>
+                    <button type="button" onclick="toggleModal('#addPaymentModal', '#paymentModalOverlay')">Cancel</button>
+                </div>
+            
+                <table id="studentPaymentsTable">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/finance/studentPayment.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('finance')
+    </script>
+</body>
+</html>

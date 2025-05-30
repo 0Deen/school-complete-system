@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="../../styles/academics.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="streams" class="section">
+                <h2>Stream Section</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchStream" placeholder="Search Stream...">
+                </div>
+
+                <button class="add-btn" id="addStreamButton" onclick="toggleModal('#addStreamForm', '#addStreamModal')">+ Add Stream</button>
+            
+                <div class="modal-overlay" id="addStreamModal"></div>
+                <div class="modal stream-form" id="addStreamForm">
+                    <span id="closeAddStreamModal" class="close" onclick="toggleModal('#addStreamForm', '#addStreamModal')">&times;</span>
+                    <h3>Add Stream</h3>
+                    <form id="StreamForm">
+                        <input type="text" id="streamName" name="streamName" placeholder="Stream Name" autocomplete="off" required>
+                        <button type="submit" onclick="initializeAddStreamForm()">Add Stream</button>
+                        <button type="button" onclick="toggleModal('#addStreamForm', '#addStreamModal')">Cancel</button>
+                    </form>
+                </div>
+            
+                <div class="modal stream-form" id="editStreamForm">
+                    <span id="closeEditStreamModal" class="close" onclick="toggleModal('#editStreamForm', '#addStreamModal')">&times;</span>
+                    <h3>Edit Stream</h3>
+                    <form id="editStreamForm">
+                        <input type="hidden" id="editStreamId">
+                        <input type="text" id="editStreamName" name="editStreamName" placeholder="Stream Name" autocomplete="off" required>
+                        <button type="submit" onclick="initializeEditStreamForm()">Update Stream</button>
+                        <button type="button" onclick="toggleModal('#editStreamForm', '#addStreamModal')">Cancel</button>
+                    </form>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stream Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stream-container">
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+
+    <script src="../../js/common/requests.js"></script>
+    <script type="text/javascript" src="../../js/academics/streams.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('academics')
+    </script>
+</body>
+</html>

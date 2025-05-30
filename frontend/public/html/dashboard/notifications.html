@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <link rel="stylesheet" href="../../styles/dashboard.css">
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+        <div class="nav-links" id="nav-links"></div>
+    </div>
+
+    <div class="sidebar" id="sidebar"></div>
+
+    <div class="holding-container">   
+        <div id="upcomingEvent" class="section active">
+            <h2>Upcoming Events</h2>
+            <div id="events-container" class="events-container"></div>
+
+            <button id="openAddEventModalButton" class="add-btn" onclick="toggleModal('#addEventModal', '#modalOverlay')">+ Add Event</button>
+
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div id="addEventModal" class="modal">
+                <span class="close" onclick="toggleModal('#addEventModal', '#modalOverlay')">&times;</span>
+                <h3>Add New Event</h3>
+
+                <label for="eventTitle">Event Title:</label>
+                <input type="text" id="eventTitle" name="eventTitle" required>
+
+                <label for="eventDate">Date:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+
+                <label for="eventTime">Time:</label>
+                <input type="time" id="eventTime" name="eventTime" required>
+
+                <label for="eventLocation">Location:</label>
+                <input type="text" id="eventLocation" name="eventLocation" required>
+
+                <label for="eventDescription">Description:</label>
+                <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea> <br><br>
+
+                <button type="button" onclick="addEvent()">Add Event</button>
+                <button type="button" onclick="toggleModal('#addEventModal', '#modalOverlay')">Cancel</button>
+            </div>
+
+            <div id="editEventModal" class="modal">
+                <span class="close" onclick="toggleModal('#editEventModal', '#modalOverlay')">&times;</span>
+                <h3>Edit Event</h3>
+                <input type="hidden" name="eventID" id="eventID">
+                
+                <label for="editEventTitle">Event Title:</label>
+                <input type="text" id="editEventTitle" name="eventEventTitle" required>
+            
+                <label for="editEventDate">Date:</label>
+                <input type="date" id="editEventDate" name="eventEventDate" required>
+            
+                <label for="editEventTime">Time:</label>
+                <input type="time" id="editEventTime" name="eventEventTime" required>
+            
+                <label for="editEventLocation">Location:</label>
+                <input type="text" id="editEventLocation" name="eventEventLocation" required>
+            
+                <label for="editEventDescription">Description:</label>
+                <textarea id="editEventDescription" name="eventEventDescription" rows="4" required></textarea> <br><br>
+            
+                <button type="button" onclick="editEvent()">Save Changes</button>
+                <button type="button" onclick="toggleModal('#editEventModal', '#modalOverlay')">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+<script src="../../js/dashboard/upcomingEvents.js"></script>
+<script src="../../js/common/navbar.js"></script>
+<script src="../../js/common/common.js"></script>
+<script>
+    renderNavBar('dashboard')
+</script>
+</body>
+</html>

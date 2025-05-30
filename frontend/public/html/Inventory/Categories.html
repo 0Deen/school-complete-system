@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="../../styles/finance.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="accounts" class="section">
+                <h2>Inventory Management - Categories</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchCategory" placeholder="Search...">
+                </div>
+
+                <button class="add-account-btn" id="addCategoryButton" onclick="toggleModal('#addModal', '#modalOverlay')">+ Add Category</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="addModal">
+                    <h3>Add Category</h3>
+
+                    <span class="close" onclick="toggleModal('#addModal', '#modalOverlay')">&times;</span>
+
+                    <label for="addName">Name</label>
+                    <input type="text" name="addName" id="addName" placeholder="e.g. Furniture">
+
+                    <label for="addDescription">Description(Optional)</label>
+                    <input type="text" name="addDescription" id="addDescription">
+                    
+                    <button type="submit" onclick="addCategory()">Add Category</button>
+                    <button type="button" onclick="toggleModal('#addModal', '#modalOverlay')">Cancel</button>
+                </div>
+            
+                <div class="modal" id="editModal">
+                    <h3>Edit Category</h3>
+
+                    <span class="close" onclick="toggleModal('#editModal', '#modalOverlay')">&times;</span>
+
+                    <input type="hidden" name="editId" id="editId">
+
+                    <label for="editName">Name</label>
+                    <input type="text" name="editName" id="editName">
+
+                    <label for="editDescription">Description(Optional)</label>
+                    <input type="text" name="editDescription" id="editDescription">
+                    
+                    <button type="submit" onclick="editCategory()">Save Changes</button>
+                    <button type="button" onclick="toggleModal('#editModal', '#modalOverlay')">Cancel</button>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="category-container">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/inventory/category.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('inventory')
+    </script>
+</body>
+</html>

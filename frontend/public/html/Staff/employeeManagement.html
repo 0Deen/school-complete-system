@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/staff.css">
+    <title>Staff</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div id="mainContent">
+            <div id="employeeManagement" class="section">
+                <h2>Employee Management</h2>
+                
+                <div id="search-containers">
+                    <input type="text" id="searchPosition" placeholder="Search...">
+                </div>
+                
+                <div class="search-container">
+                    <select name="specializedPosition" id="specializedPosition"></select>
+                </div>
+                
+                <button class="add-position-btn" id="openAddEmployeeModalButton" onclick="toggleModal('#addEmployeeModal', '#modalOverlay')">+ Add Employee</button>
+            
+                <div class="modal" id="addEmployeeModal">
+                    <span id="closeAddEmployeeModal" class="close" onclick="toggleModal('#addEmployeeModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Employee</h3>
+                    <form id="addEmployeeForm">
+                        <label for="addFirstName">First Name:</label>
+                        <input type="text" id="addFirstName" name="firstName" autocomplete="off" required>
+            
+                        <label for="addLastName">Last Name:</label>
+                        <input type="text" id="addLastName" name="lastName" autocomplete="off" required>
+            
+                        <label for="addParentPositionSelect">Parent Position:</label>
+                        <select id="addParentPositionSelect" name="parentPosition" required></select>
+
+                        <label for="addPositionSelect">Position:</label>
+                        <select id="addPositionSelect" name="position" required></select>
+            
+                        <label for="addEmail">Email:</label>
+                        <input type="email" id="addEmail" name="email" autocomplete="off" required>
+            
+                        <label for="addPhoneNumber">Phone Number:</label>
+                        <input type="tel" id="addPhoneNumber" name="phone" autocomplete="off" required>
+            
+                        <button type="button" onclick="initializeAddEmployeeForm()">Add Employee</button>
+                        <button type="button" onclick="toggleModal('#addEmployeeModal', '#modalOverlay')">Cancel</button>
+                    </form>
+                </div>
+                
+                <div class="modal" id="editEmployeeModal">
+                    <span id="closeEditEmployeeModal" class="close" onclick="toggleModal('#editEmployeeModal', '#modalOverlay')">&times;</span>
+                    <h3>Edit Employee</h3>
+                    <form id="editEmployeeForm">
+                        <input type="hidden" name="editEmployeeId" id="editEmployeeId">
+                        
+                        <label for="editFirstName">First Name:</label>
+                        <input type="text" id="editFirstName" name="firstName" autocomplete="off" required>
+            
+                        <label for="editLastName">Last Name:</label>
+                        <input type="text" id="editLastName" name="lastName" autocomplete="off" required>
+            
+                        <label for="editParentPositionSelect">Parent Position:</label>
+                        <select id="editParentPositionSelect" name="parentPosition" required></select>
+
+                        <label for="editPositionSelect">Position:</label>
+                        <select id="editPositionSelect" name="position" required></select>
+            
+                        <label for="editEmail">Email:</label>
+                        <input type="email" id="editEmail" name="email" autocomplete="off" required>
+            
+                        <label for="editPhoneNumber">Phone Number:</label>
+                        <input type="tel" id="editPhoneNumber" name="phone" autocomplete="off" required>
+            
+                        <button type="button" onclick="initializeEditEmployeeForm()">Save Changes</button>
+                        <button type="button" onclick="toggleModal('#editEmployeeModal', '#modalOverlay')">Cancel</button>
+                    </form>
+                </div>
+
+                <div class="modal" id="addPayrollModal">
+                    <span id="closeAddPayrollModal" class="close" onclick="toggleModal('#addPayrollModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Payroll</h3>
+                    <form id="addPayrollForm">
+                        <div class="form-group">
+                            <input type="hidden" name="addEmployeeSelect" id="addEmployeeSelect">
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="addSalary">Salary:</label>
+                            <input type="number" name="addSalary" id="addSalary" class="form-control">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="addBonus">Bonus</label>
+                            <input type="text" id="addBonus" name="Bonus" class="form-control" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="addDeductions">Deductions</label>
+                            <input type="text" id="addDeductions" name="Deductions" class="form-control" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="addPayDate">Pay Date</label>
+                            <input type="date" id="addPayDate" name="PayDate" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                           <!--  <label for="addNetPay">Net Pay</label> -->
+                            <input type="hidden" id="addNetPay" name=NetPay" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="addPaymentMethod">Payment Method</label>
+                            <select id="addPaymentMethod" name="PaymentMethod" class="form-control" required>
+                                <option value="" disabled selected>Select a payment method</option>
+                                <option value="CreditCard">Credit Card</option>
+                                <option value="DebitCard">Debit Card</option>
+                                <option value="Cash">Cash</option>
+                                <option value="BankTransfer">Bank Transfer</option>
+                                <option value="MobileMoney">Mobile Money</option>
+                            </select>
+                        </div>
+                    
+                        <div class="form-group">
+                            <button type="button" onclick="initializeAddPayrollForm()">Submit Payroll</button>
+                            <button type="button" onclick="toggleModal('#addPayrollModal', '#modalOverlay')">Cancel</button>
+                        </div>
+                    </form>                 
+                </div>
+
+                <div class="modal-overlay" id="modalOverlay"></div>
+
+                
+                <table id="employeeManagementTable">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Position</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employee-container"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/staff/employeeManagement.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/index.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('staff');
+    </script>
+</body>
+</html>

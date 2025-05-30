@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="../../styles/reports.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="paymentReports" class="section">
+                <h2>Payment Reports</h2>
+            
+                <button id="addPaymentReportBtn" class="addPaymentReportBtn" onclick="toggleModal('#paymentReportModal', '#paymentReportOverlay')">+ Add Payment Report</button>
+            
+                <div id="paymentReportOverlay" class="modal-overlay"></div>
+                <div id="paymentReportModal" class="modal">
+                    <span id="closePaymentReportModal" class="close" onclick="toggleModal('#paymentReportModal', '#paymentReportOverlay')">&times;</span>
+                    <h3>Add Payment Report</h3>
+                    <form id="paymentReportsForm">
+                        <label for="paymentDate">Payment Date:</label>
+                        <input type="date" id="paymentDate" required>
+            
+                        <label for="supplier">Supplier:</label>
+                        <input type="text" id="supplier" required>
+            
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" required>
+            
+                        <label for="paymentMethod">Payment Method:</label>
+                        <input type="text" id="paymentMethod" required>
+            
+                        <label for="status">Status:</label>
+                        <input type="text" id="status" required>
+            
+                        <button type="submit">Add Report</button>
+                        <button type="button" onclick="toggleModal('#paymentReportModal', '#paymentReportOverlay')">Cancel</button>
+                    </form>
+                </div>
+            
+                <table id="paymentReportsTable">
+                    <thead>
+                        <tr>
+                            <th>Payment Date</th>
+                            <th>Supplier</th>
+                            <th>Amount</th>
+                            <th>Payment Method</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentReportsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/report/payments.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('report')
+    </script>
+</body>
+</html>

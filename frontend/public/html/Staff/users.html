@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/staff.css">
+    <title>User Management</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div id="mainContent">
+            <div id="users" class="section">
+                <h2>User Management</h2>
+                
+                <div class="search-container">
+                    <input type="text" id="searchUser" placeholder="Search User...">
+                </div>
+
+                <button class="add-user-btn" id="addUserButton" onclick="toggleUserForm()">+ Add User</button>
+
+                <div class="users-form">
+                    <form id="addUserForm">
+                        <label for="userName">User Name</label>
+                        <input type="text" id="userName" placeholder="User Name" autocomplete="off" required>
+
+                        <label for="userRole">Role</label>
+                        <input type="text" id="userRole" placeholder="Role" autocomplete="off" required>
+
+                        <label for="userPassword">Password</label>
+                        <input type="password" id="userPassword" placeholder="Password" autocomplete="off" required>
+
+                        <button type="submit">Add User</button>
+                    </form>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/staff/userManagement.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/index.js"></script>
+    <script>
+        renderNavBar('staff')
+    </script>
+</body>
+</html>

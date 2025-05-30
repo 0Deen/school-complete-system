@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees</title>
+    <link rel="stylesheet" href="../../styles/fees.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="voteheads" class="section">
+                <h2>Votehead Management</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchVoteheads" placeholder="Search...">
+                </div>
+                
+                <div class="search-container">
+                    <select name="year" id="year"></select>
+                    <select name="term" id="term"></select>
+                </div>
+                
+                <button id="addVoteheadButton" class="add-fee-btn" onclick="toggleModal('#addModal', '#modalOverlay')">+ Add Votehead</button>
+                
+                <div id="modalOverlay" class="modal-overlay"></div>
+
+                <div id="addModal" class="modal">
+                    <span class="close" onclick="toggleModal('#addModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Votehead</h3>
+
+                    <label for="addName">Name</label>
+                    <input type="text" id="addName" placeholder="e.g. Tuition" autocomplete="off" required>
+        
+                    <label for="addAmount">Amount</label>
+                    <input type="number" name="addAmount" id="addAmount" placeholder="e.g. 10000">
+
+                    <label for="addYear">Year</label>
+                    <select name="addYear" id="addYear"></select>
+
+                    <label for="addTerm">Term</label>
+                    <select name="addTerm" id="addTerm"></select>
+
+                    <label for="addPriority">Priority</label>
+                    <select name="addPriority" id="addPriority">
+                        <option value="">Select Priority</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+        
+                    <button type="button" onclick="addVotehead()">Add Votehead</button>
+                    <button type="button" onclick="toggleModal('#addModal', '#modalOverlay')">Cancel</button>
+                </div>
+
+                <div id="editModal" class="modal">
+                    <span class="close" onclick="toggleModal('#editModal', '#modalOverlay')">&times;</span>
+                    <h3>Edit Votehead</h3>
+
+                    <input type="hidden" name="" id="editVoteheadId">
+
+                    <label for="editName">Name</label>
+                    <input type="text" id="editName" placeholder="e.g. Tuition" autocomplete="off" required>
+        
+                    <label for="editAmount">Amount</label>
+                    <input type="number" name="editAmount" id="editAmount" placeholder="e.g. 10000">
+
+                    <label for="editYear">Year</label>
+                    <select name="editYear" id="editYear"></select>
+
+                    <label for="editTerm">Term</label>
+                    <select name="editTerm" id="editTerm"></select>
+
+                    <label for="editPriority">Priority</label>
+                    <select name="editPriority" id="editPriority">
+                        <option value="">Select Priority</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+        
+                    <button type="submit" onclick="editVotehead()">Edit Votehead</button>
+                    <button type="button" onclick="toggleModal('#editModal', '#modalOverlay')">Cancel</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Year</th>
+                            <th>Term</th>
+                            <th>Priority</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="votehead-container">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script src="../../js/fees/voteheads.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('fees')
+    </script>
+</body>
+</html>

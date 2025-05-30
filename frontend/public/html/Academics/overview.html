@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="../../styles/academics.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="container">
+                <div class="overview-container">
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/blocks.png" alt="Blocks">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Blocks</h3>
+                            <div class="count" id="totalBlocks">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/streams.png" alt="Streams">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Streams</h3>
+                            <div class="count" id="totalStreams">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/class.png" alt="All Classes">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Classes</h3>
+                            <div class="count" id="totalClasses">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/terms.png" alt="Terms">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Current Term</h3>
+                            <div class="count" id="currentTerm">-</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/students.png" alt="Total Students">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Students</h3>
+                            <div class="count" id="totalStudents">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/Teachers.png" alt="Total Teachers">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Total Teachers</h3>
+                            <div class="count" id="totalTeachers">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../js/common/requests.js"></script>
+    <script type="text/javascript" src="../../js/academics/overview.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('academics')
+    </script>
+</body>
+</html>

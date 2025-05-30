@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="../../styles/academics.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="years" class="section">
+                <h2>Year Section</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchYear" placeholder="Search Year...">
+                </div>
+
+                <button class="add-btn" id="addYearButton" onclick="toggleModal('#addYearForm', '#modalOverlayYear')">+ Add Year</button>
+            
+                <div class="modal-overlay" id="modalOverlayYear"></div>
+                <div class="modal year-form" id="addYearForm">
+                    <span id="closeAddYearModal" class="close" onclick="toggleModal('#addYearForm', '#modalOverlayYear')">&times;</span>
+                    <h3>Add Year</h3>
+            
+                    <label for="yearName">Year Name (Optional)</label>
+                    <input type="text" id="yearName" placeholder="Year Name (e.g., Champions Year)" autocomplete="off" required>
+            
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" required>
+            
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" required>
+            
+                    <label for="term">Terms (Optional)</label> 
+                    <input type="number" name="terms" id="terms" placeholder="e.g. 3">
+            
+                    <button type="button" onclick="initializeAddYear()">Add Year</button>
+                    <button type="button" onclick="toggleModal('#addYearForm', '#modalOverlayYear')">Cancel</button>
+                </div>
+
+                <div class="modal year-form" id="editYearForm">
+                    <span id="closeEditYearModal" class="close" onclick="toggleModal('#editYearForm', '#modalOverlayYear')">&times;</span>
+                    <h3>Edit Year</h3>
+
+                    <input type="hidden" name="editYearId" id="editYearId">
+            
+                    <label for="editYearName">Year Name</label>
+                    <input type="text" id="editYearName" placeholder="Year Name (e.g., 2023/2024)" autocomplete="off" required>
+            
+                    <label for="editStartDate">Start Date</label>
+                    <input type="date" id="editStartDate" required>
+            
+                    <label for="editEndDate">End Date</label>
+                    <input type="date" id="editEndDate" required>
+            
+                    <label for="editTerm">Term</label> 
+                    <input type="number" name="terms" id="editTerm">
+            
+                    <button type="button" onclick="initializeEditYear()">Save Changes</button>
+                    <button type="button" onclick="toggleModal('#editYearForm', '#modalOverlayYear')">Cancel</button>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year Name</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Term</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="year-container">
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script type="text/javascript" src="../../js/academics/year.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('academics')
+    </script>
+</body>
+</html>

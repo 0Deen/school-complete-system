@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="../../styles/finance.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="transactions" class="section">
+                <h2>Transactions Management</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchTransaction" placeholder="Search...">
+                </div>
+                
+                <div class="search-container">
+                    <select name="transaction" id="transaction"></select>
+                    </select>
+                </div>
+
+                <button class="add-transaction-btn" onclick="toggleModal('#addModal', '#modalOverlay')">+ Add Transaction</button>
+                
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="addModal">
+                    <h3>Add Transaction</h3>
+                
+                    <label for="addAccount">Account</label>
+                    <select id="addAccount" required></select>
+                
+                    <label for="addBankTransactionType">Transaction Type</label>
+                    <select id="addBankTransactionType" required>
+                        <option value="+">Deposit</option>
+                        <option value="-">Withdrawal</option>
+                    </select>
+                
+                    <label for="addBankTransactionAmount">Transaction Amount</label>
+                    <input type="number" id="addBankTransactionAmount" placeholder="Enter Amount" required>
+                
+                    <label for="addBankTransactionDate">Date</label>
+                    <input type="date" id="addBankTransactionDate" required>
+                
+                    <label for="addTransactionDescription">Description</label>
+                    <input type="text" id="addTransactionDescription" required>
+                
+                    <button type="button" onclick="initializeAddTransactionsForm()">Process Transaction</button>
+                    <button type="button" onclick="toggleModal('#addModal', '#modalOverlay')">Cancel</button>
+                </div>
+                
+                
+                <div class="modal" id="editModal">
+                    <h3>Edit Transaction</h3>
+                    <label for="editAccount">Account</label>
+                    <select id="editAccount" required></select>
+                
+                    <label for="editBankTransactionType">Transaction Type</label>
+                    <select id="editBankTransactionType" required>
+                        <option value="+">Deposit</option>
+                        <option value="-">Withdrawal</option>
+                    </select>
+                
+                    <label for="editBankTransactionAmount">Transaction Amount</label>
+                    <input type="number" id="editBankTransactionAmount" placeholder="Enter Amount" required>
+                
+                    <label for="editBankTransactionDate">Date</label>
+                    <input type="date" id="editBankTransactionDate" required>
+                
+                    <label for="editTransactionDescription">Description</label>
+                    <textarea id="editTransactionDescription" placeholder="Enter Description"></textarea>
+                
+                    <button type="button" onclick="submitTransactionForm('edit')">Save Changes</button>
+                    <button type="button" onclick="toggleModal('#editModal', '#editTransactionModalOverlay')">Cancel</button>
+                </div>
+                
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account</th>
+                            <th>Transaction Type</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Operation</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-container"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/finance/transactions.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('finance')
+    </script>
+</body>
+</html>

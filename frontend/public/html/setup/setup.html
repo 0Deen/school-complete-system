@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup</title>
+    <link rel="stylesheet" href="../../styles/setup.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Simba Systems</h1>
+        <img src="../../assets/logo/SIMBA BLACK 2.png" alt="">
+    </div>
+    <div class="content">
+        <div class="settings-header">
+            <h2>Application Setup</h2><br>
+            <p>Configure the initial settings for your application</p>
+            <p>You can always change them later on in the system settings</p>
+        </div>
+
+        <div class="settings-section">
+            <div class="form-group">
+                <h3>Database Configuration</h3>
+                <div class="form-input">
+                    <label for="dbHost">Database Host</label>
+                    <input type="text" id="dbHost" name="dbHost" placeholder="Enter database host" autocomplete="off">
+                </div>
+                <div class="form-input">
+                    <label for="dbHost">Database Port</label>
+                    <input type="number" id="dbPort" name="dbPort" placeholder="Enter database port" autocomplete="off">
+                </div>
+                <div class="form-input">
+                    <label for="dbUser">Database User</label>
+                    <input type="text" id="dbUser" name="dbUser" placeholder="Enter database username" autocomplete="off">
+                </div>
+                <div class="form-input">
+                    <label for="dbPassword">Database Password</label>
+                    <input type="password" id="dbPassword" name="dbPassword" placeholder="Enter database password" autocomplete="off">
+                </div>
+                <div class="form-input">
+                    <label for="dbName">Database Name</label>
+                    <input type="text" id="dbName" name="dbName" placeholder="Enter database name " autocomplete="off">
+                </div>
+
+                <div class="status" id="status"></div>
+
+                <div class="button-group">
+                    <button type="button" class="test-btn" onclick="testConnection()">Test Connection</button>
+                    <button type="button" class="save-btn" onclick="saveSetup()">Save Configuration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/setup/setup.js"></script>
+</body>
+</html>

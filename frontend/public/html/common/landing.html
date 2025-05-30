@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simba Systems - Loading</title>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #ffffff;
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .body :hover{
+            cursor: default;
+        }
+        body, .container {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 300px;
+            background: #3b3b3b;
+            overflow: hidden;
+            background-image: url('../../assets/bg/bg.png');
+        }
+        .logo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo img {
+            width: 200px;
+            pointer-events: none;
+            object-fit: cover;
+        }
+        .content {
+            padding: 5px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+        }
+        .system-name {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            width: 100%;
+            padding: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .description {
+            margin-top: 80px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .contact {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-evenly;
+            padding-left: 10px;
+            font-size: 15px;
+            margin-top: auto;
+            margin-bottom: 30px;
+        }
+        .contact p{
+            margin: 10px;
+            font-size: 12px;
+        }
+        span{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            height: 5px;
+            background: #000000;
+            overflow: hidden;
+        }
+        .progress-bar-inner {
+            width: 0;
+            height: 100%;
+            background: #0066ff;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="../../assets/logo/simba png.png" alt="Simba Systems Logo">
+        </div>
+        <div class="content">
+            <div class="system-name">Simba Systems</div>
+            <div class="description">School Finance Management Software</div>
+            <div class="contact">
+                <h4>Powered by Asilihub Limited</h4>
+                <p>Email: info@asilihub.net</p>
+                <p>Phone: 0701396101</p>
+            </div>
+            <span>Loading...</span>
+            <div class="progress-bar">
+                <div class="progress-bar-inner" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const progressBar = document.getElementById('progressBar');
+    
+        let progress = 0;
+        const duration = 2500;
+        const interval = 10; 
+        const increment = (100 / (duration / interval));
+    
+        const progressInterval = setInterval(() => {
+            if (progress < 100) {
+                progress += increment;
+                progressBar.style.width = `${progress}%`;
+            } else {
+                clearInterval(progressInterval);
+                progressBar.style.width = "100%";
+            }
+        }, interval);
+    </script>    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Data</title>
+    <link rel="stylesheet" href="../../styles/externalData.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <!-- <div class="section">
+            <h2>Import Old SAMIS</h2>
+            <form id="oldSamisForm" onsubmit="importOldSamis(event)">
+                <label for="oldSamisFile">Upload Old SAMIS File:</label>
+                <input type="file" id="oldSamisFile" name="oldSamisFile" accept=".csv, .xls, .xlsx" required>
+                <input type="submit" value="Import">
+            </form>
+        </div>  -->
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/externalData/oldSamis.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('externalData')
+    </script>
+</body>
+</html>

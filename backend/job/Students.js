@@ -1,0 +1,4 @@
+const studentsJob = {
+    promote:()=>{},
+    checkFees:()=>{}
+};

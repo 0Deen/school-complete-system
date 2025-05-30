@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security</title>
+    <link rel="stylesheet" href="../../styles/account.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="settings-container">
+                <div class="settings-header">
+                    <h2>Account Settings</h2>
+                    <p>Manage your account security and authentication settings</p>
+                </div>
+            
+                <div class="settings-section">
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <h3>Password Management</h3>
+                            <div class="form-input">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password">
+                            </div>
+                            <div class="form-input">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password">
+                            </div>
+                            <div class="form-input">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password">
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <h3>Account Status</h3>
+                            <div class="account-status">
+                                <p>Account Type: <span id="accountType">Admin</span></p>
+                                <p>Member Since: <span id="memberSince">January 1, 2023</span></p>
+                                <p>Last Login: <span id="lastLogin">July 1, 2023</span></p>
+                            </div>
+                        </div>
+            
+                        <div class="button-group">
+                            <button type="button" class="save-btn" onclick="saveAccountSettings()">Save Changes</button>
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="button" class="danger-btn" onclick="deactivateAccount()">Deactivate Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/settings/account.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('settings')
+    </script>
+</body>
+</html>

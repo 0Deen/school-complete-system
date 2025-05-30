@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <!-- Login Form -->
+    <form id="login-form">
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <br>
+
+    <button id="home-btn" style="display: none;">Home</button>
+
+    <div id="user-info" style="display: none;">
+        <h2>User Information:</h2>
+        <pre id="user-data"></pre>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const response = await fetch('http://localhost:3002/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById("login-form").style.display = 'none';
+                    document.getElementById("home-btn").style.display = 'block';
+                } else {
+                    alert(data.error || 'Login failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred during login.');
+            }
+        });
+
+        document.getElementById("home-btn").addEventListener("click", async function() {
+            try {
+                const response = await fetch('http://localhost:3002/home', {
+                    method: 'GET',
+                    credentials: 'include'
+                })
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById("user-info").style.display = 'block';
+                    document.getElementById("user-data").textContent = JSON.stringify(data, null, 2);
+                } else {
+                    alert(data.error || 'Failed to fetch user information');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred fetching user information.');
+            }
+        });
+    </script>
+</body>
+</html>

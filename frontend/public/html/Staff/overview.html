@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/staff.css">
+    <title>Staff</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div id="mainContent">
+            <div class="overview-container">
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/Employees.png" alt="Total Employees">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Total Employees</h3>
+                        <p class="count" id="totalEmployees"></p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/Active Position.png" alt="Active Positions">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Total Positions</h3>
+                        <p class="count" id="totalPositions"></p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/Payroll.png" alt="Monthly Payroll">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Monthly Payroll</h3>
+                        <p class="count" id="totalNetPay"></p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/On Leave.png" alt="On Leave">
+                    </div>
+                    <div class="tile-content">
+                        <h3>On Leave</h3>
+                        <p class="count"></p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/new Hires.png" alt="New Hires">
+                    </div>
+                    <div class="tile-content">
+                        <h3>New Hires</h3>
+                        <p class="count"></p>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/staff/overview.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/index.js"></script>
+    <!-- <script src="../../js/common/navbarInit.js"></script> -->
+    <script>
+        renderNavBar('staff')
+    </script>
+</body>
+</html>

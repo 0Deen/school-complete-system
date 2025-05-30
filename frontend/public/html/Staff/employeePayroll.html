@@ -1,0 +1,173 @@
+bh<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/staff.css">
+    <title>Staff</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div id="mainContent">
+            <div id="employeePayroll" class="section">
+                <h2>Employee Payroll</h2>
+                
+                <div id="search-containers">
+                    <input type="text" id="searchPayroll" placeholder="Search...">
+                </div>
+                
+                <div class="search-container">
+                    <select name="method" id="method"></select>
+                    </select>
+                </div>
+                
+                <button class="add-position-btn" id="openAddPayrollModalButton" onclick="toggleModal('#addPayrollModal', '#modalOverlay')">+ Add Payroll</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="addPayrollModal">
+                    <span id="closeAddPayrollModal" class="close" onclick="toggleModal('#addPayrollModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Payroll</h3>
+                    <form id="addPayrollForm">
+                        <div class="form-group">
+                            <label for="addEmployeeSelect">Employee</label>
+                            <select id="addEmployeeSelect" name="employeeId">
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="addSalary">Salary</label>
+                            <input type="text" id="addSalary" name="Salary" class="form-control" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="addBonus">Bonus</label>
+                            <div id="addBonusContainer" class="input-container">
+                                <button type="button" id="addBonusButton" onclick="addBonusField()">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="addDeductions">Deductions</label>
+                            <div id="addDeductionsContainer" class="input-container">
+                                <button type="button" id="addDeductionButton" onclick="addDeductionField()">+</button>
+                            </div>
+                        </div>                        
+                    
+                        <div class="form-group">
+                            <label for="addPayDate">Pay Date</label>
+                            <input type="date" id="addPayDate" name="PayDate" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                           <!--  <label for="addNetPay">Net Pay</label> -->
+                            <input type="hidden" id="addNetPay" name=NetPay" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="addPaymentMethod">Payment Method</label>
+                            <select id="addPaymentMethod" name="PaymentMethod" class="form-control" required>
+                                <option value="" disabled selected>Select a payment method</option>
+                                <option value="CreditCard">Credit Card</option>
+                                <option value="DebitCard">Debit Card</option>
+                                <option value="Cash">Cash</option>
+                                <option value="BankTransfer">Bank Transfer</option>
+                                <option value="MobileMoney">Mobile Money</option>
+                            </select>
+                        </div>
+                    
+                        <div class="form-group">
+                            <button type="button" onclick="initializeAddPayrollForm()">Submit Payroll</button>
+                            <button type="button" onclick="toggleModal('#addPayrollModal', '#modalOverlay')">Cancel</button>
+                        </div>
+                    </form>                 
+                </div>
+
+                <div class="modal" id="editPayrollModal">
+                    <span id="closeEditEmployeeModal" class="close" onclick="toggleModal('#editPayrollModal', '#modalOverlay')">&times;</span>
+                    <h3>Edit Payroll</h3>
+                    <form id="editPayrollForm">
+                        <div class="form-group">
+                            <label for="editEmployeeId">Employee ID</label>
+                            <input type="text" id="editEmployeeId" name="EmployeeID" class="form-control" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="editSalary">Salary</label>
+                            <input type="text" id="editSalary" name="Salary" class="form-control" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="editBonus">Bonus</label>
+                            <div id="editBonusContainer" class="input-container">
+                                <button type="button" id="editBonusButton" onclick="editBonusField()">Add Bonus</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editDeductions">Deductions</label>
+                            <div id="editDeductionsContainer" class="input-container">
+                                <button type="button" id="editDeductionButton" onclick="editDeductionField()">Add Deduction</button>
+                            </div>
+                        </div>
+                                               
+                    
+                        <div class="form-group">
+                            <label for="editPayDate">Pay Date</label>
+                            <input type="date" id="editPayDate" name="PayDate" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="editPaymentMethod">Payment Method</label>
+                            <select id="editPaymentMethod" name="PaymentMethod" class="form-control" required>
+                                <option value="" disabled selected>Select a payment method</option>
+                                <option value="CreditCard">Credit Card</option>
+                                <option value="DebitCard">Debit Card</option>
+                                <option value="Cash">Cash</option>
+                                <option value="BankTransfer">Bank Transfer</option>
+                                <option value="MobileMoney">Mobile Money</option>
+                            </select>
+                        </div>
+                        
+                    
+                        <div class="form-group">
+                            <button type="submit" onclick="initializeEditPayrollForm()">Update Payroll</button>
+                            <button type="button" onclick="toggleModal('#editPayrollModal', '#modalOverlay')">Cancel</button>
+                        </div>
+                    </form>                 
+                </div>
+                
+                <table id="employeePayrollTable">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Base Salary</th>
+                            <th>Bonus</th>
+                            <th>Deductions</th>
+                            <th>Net Salary</th>
+                            <th>Date</th>
+                            <th>Payment Method</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="payroll-container">
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/staff/employeePayroll.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/index.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('staff')
+    </script>
+</body>
+</html>

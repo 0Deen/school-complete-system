@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/students.css">
+    <title>Students</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div id="mainContent">
+            <div class="overview-container">
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/students.png" alt="All Students">
+                    </div>
+                    <div class="tile-content">
+                        <h3>All Students</h3>
+                        <p class="count" id="allStudentsCount">0</p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/active.png" alt="Acive Students">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Active Students</h3>
+                        <p class="count" id="activeStudentsCount">0</p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/inactive.png" alt="Inactive Student">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Inactive Students</h3>
+                        <p class="count" id="inactiveStudentsCount">0</p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/New Admission.png" alt="New Admission">
+                    </div>
+                    <div class="tile-content">
+                        <h3>New Admissions</h3>
+                        <p class="count" id="newAdmissionscount">0</p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/feeDefaulter.png" alt="Fee Defaulters">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Fee Defaulters</h3>
+                        <p class="count" id="feeDefaultersCount">0</p>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/students/overview.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/index.js"></script>
+    <script>
+        renderNavBar('students')
+    </script>
+</body>
+</html>

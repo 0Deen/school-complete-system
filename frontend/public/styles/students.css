@@ -1,0 +1,79 @@
+@import url('../styles/common.css');
+
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 30px;
+    background: #273A84;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(39, 58, 132, 0.3);
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(39, 58, 132, 0.4);
+}
+
+#studentDetailsModal {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.modal-content {
+    max-width: 400px;
+    padding: 30px;
+    text-align: left;
+    color: #333;
+}
+
+.modal-content h2,
+#studentDetailsModal > p {
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+}
+
+.modal-content p strong {
+    color: #333;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.modal-content span {
+    font-weight: 400;
+    color: #666;
+    text-align: right;
+}

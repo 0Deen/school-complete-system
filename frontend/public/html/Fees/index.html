@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searchable Input with Dropdown</title>
+</head>
+<body>
+    <label for="searchInput">Search:</label>
+    <input list="dynamicOptions" id="searchInput" placeholder="Start typing...">
+
+<datalist id="dynamicOptions"></datalist>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+    const datalist = document.getElementById('dynamicOptions');
+
+    const allOptions = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape', 'Mango'];
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        datalist.innerHTML = ''; // Clear previous options
+        const filteredOptions = allOptions.filter(item => item.toLowerCase().includes(query));
+        filteredOptions.forEach(option => {
+            const opt = document.createElement('option');
+            opt.value = option;
+            datalist.appendChild(opt);
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Data</title>
+    <link rel="stylesheet" href="../../styles/externalData.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="importExcelSection" class="section">
+                <h2>Import from Excel</h2>
+            
+                <button class="add-report-btn" id="addExcelButton" onclick="toggleModal('#excelImportModal', '#modalOverlay')">+ Import Excel File</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="excelImportModal">
+                    <span id="closeExcelImportModal" class="close" onclick="toggleModal('#excelImportModal', '#modalOverlay')">&times;</span>
+                    <h3>Import Excel File</h3>
+                    <form id="excelImportForm" onsubmit="importFromExcel(event)">
+                        <label for="excelFile">Upload Excel File:</label>
+                        <input type="file" id="excelFile" name="excelFile" accept=".xls, .xlsx" required>
+                        <div class="modal-footer">
+                            <button type="submit">Import</button>
+                            <button type="button" onclick="toggleModal('#excelImportModal', '#modalOverlay')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/externalData/excelImports.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('externalData')
+    </script>
+</body>
+</html>

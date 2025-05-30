@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../../styles/dashboard.css">
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+        <div class="nav-links" id="nav-links"></div>
+    </div>
+    <div class="sidebar" id="sidebar"></div>
+
+    <div class="holding-container">
+        <div class="content">
+            <div class="top-right-icons">
+                <div class="profile-icon" id="notificationIcon">
+                    <img src="../../../public/assets/images/notification.png" alt="notification bell">
+                    <span class="badge" id="totalNotifications"></span>
+                </div>
+            </div>
+            
+            <div id="dashboard" class="section active">
+                <h1>Dashboard</h1>
+                <div class="flex">
+                    <div class="chart-container">
+                        <div class="chart-filters">
+                            <label for="timeFilter">Time</label>
+                            <select name="timeFilter" id="timeFilter" class="timeFilter">
+                                <option value="day">Day</option>
+                                <option value="month">Month</option>
+                                <option value="year">Year</option>
+                            </select>
+                    
+                            <label for="dataFilter">Data</label>
+                            <select id="dataFilter">
+                                <option value="fees" selected>Fees Collected</option>
+                                <option value="bursaries">Bursary</option>
+                                <option value="earnings">Earnings</option>
+                            </select>
+                        </div>
+                        <canvas id="feesCollectionChart"></canvas>
+                    </div>        
+                    
+                    <div class="dashboard-overview">
+                        <div class="tile">
+                            <h3>Total Fees Collected</h3>
+                            <p id="totalFeesCollected"></p>
+                        </div>
+                        <div class="tile">
+                            <h3>Total Activity Fees</h3>
+                            <p id="totalActivityFees">Ksh 30,000</p>
+                        </div>
+                        <div class="tile">
+                            <h3>Total Tuition Paid</h3>
+                            <p id="totalTuitionPaid">Ksh 70,000</p>
+                        </div>
+                        <div class="tile">
+                            <h3>Total Miscellaneous</h3>
+                            <p id="totalMiscellaneous">Ksh 20,000</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="activities">
+                    <div class="tab-section">
+                        <h1>Fees Collection</h1>
+                        <div class="tabs-row">
+                            <div class="search-bar">
+                                <input type="text" placeholder="Search by name or ID" id="searchInput">
+                            </div>
+                            <div class="view-more">
+                                <a href="#">View More &rarr;</a>
+                            </div>
+                        </div>
+                
+                        <div id="FeeCollection" class="tabcontent active">
+                            <div id="paginationControls"></div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Student Name</th>
+                                        <th>Student ID</th>
+                                        <th>Amount Paid</th>
+                                        <th>Payment Mode</th>
+                                        <th>Payment Date</th>
+                                        <th>Account Name</th>
+                                        <th>Term</th>
+                                        <th>Year</th>
+                                        <th>Reference</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="feeTable"></tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../js/dashboard/overview.js"></script>
+<script src="../../js/common/navbar.js"></script>
+<script>
+    renderNavBar('dashboard')
+</script>
+</body>
+</html>

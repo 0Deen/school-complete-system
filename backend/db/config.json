@@ -1,0 +1,23 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": "3306",
+    "user": "root",
+    "password": "pedro254",
+    "database": "schoolmanagement"
+  },
+  "system": {
+    "system-status": "",
+    "initialization": "",
+    "serial-number": "",
+    "system-tier": "dev",
+    "port": 3000
+  },
+  "activation": {
+    "code": {
+      "token": "",
+      "status": "",
+      "expiry": ""
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="../../styles/reports.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="studentReports" class="section">
+                <h2>Student Reports</h2>
+            
+                <button id="addStudentReportBtn" class="addStudentReportBtn" onclick="toggleModal('#studentReportModal', '#studentReportOverlay')">+ Add Student Report</button>
+            
+                <div id="studentReportOverlay" class="modal-overlay"></div>
+                <div id="studentReportModal" class="modal">
+                    <span id="closeStudentReportModal" class="close" onclick="toggleModal('#studentReportModal', '#studentReportOverlay')">&times;</span>
+                    <h3>Add Student Report</h3>
+                    <form id="studentReportsForm">
+                        <label for="studentName">Student Name:</label>
+                        <input type="text" id="studentName" required>
+            
+                        <label for="studentId">Student ID:</label>
+                        <input type="text" id="studentId" required>
+            
+                        <label for="course">Course:</label>
+                        <input type="text" id="course" required>
+            
+                        <label for="totalFeesPaid">Total Fees Paid:</label>
+                        <input type="number" id="totalFeesPaid" required>
+            
+                        <label for="status">Status:</label>
+                        <input type="text" id="status" required>
+            
+                        <button type="submit">Add Report</button>
+                        <button type="button" onclick="toggleModal('#studentReportModal', '#studentReportOverlay')">Cancel</button>
+                    </form>
+                </div>
+            
+                <table id="studentReportsTable">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Student ID</th>
+                            <th>Course</th>
+                            <th>Total Fees Paid</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentReportsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/report/students.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('report')
+    </script>
+</body>
+</html>

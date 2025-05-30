@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/students.css">
+    <title>Students</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div id="mainContent">
+            <div id="manageStudents" class="section">
+                <h2>Manage Students</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchAllStudents" placeholder="Search all students...">
+                </div>
+                
+                <div class="search-container">
+                    <select name="gender" id="gender">
+                        <option value="">All Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <select name="class" id="class"></select>
+                    </select>
+
+                    <select name="stream" id="stream"></select>
+                    </select>
+                </div>
+
+                <button id="openAddStudentModalButton" class="add-btn" onclick="toggleModal('#addStudentModal', '#modalOverlay')">+ Add Student</button>
+
+                <div class="modal-overlay" id="modalOverlay"></div>
+
+                <div class="modal" id="addStudentModal">
+                    <span class="close" onclick="toggleModal('#addStudentModal', '#modalOverlay')">&times;</span>
+                    <h3>Add New Student</h3>
+                    <label for="addStudentID">Student ID:</label>
+                    <input type="text" id="addStudentID" name="studentId" autocomplete="off" required>
+
+                    <label for="addFirstName">First Name:</label>
+                    <input type="text" id="addFirstName" name="firstName" autocomplete="off" required>
+
+                    <label for="addLastName">Last Name:</label>
+                    <input type="text" id="addLastName" name="lastName" autocomplete="off" required>
+
+                    <label for="addClassSelect">Class:</label>
+                    <select id="addClassSelect" name="class" required>
+                    </select>
+
+                    <label for="addParentPhone">Parent's Phone Number:</label>
+                    <input type="tel" id="addParentPhone" name="parentPhone" autocomplete="off" required>
+
+                    <label for="addEmail">Email:</label>
+                    <input type="email" id="addEmail" name="email" autocomplete="off" required>
+
+                    <label for="addGender">Gender:</label>
+                    <select id="addGender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <button type="button" onclick="initializeAddStudents()">Add Student</button>
+                    <button type="button" onclick="toggleModal('#addStudentModal', '#modalOverlay')">Cancel</button>
+                </div>
+
+                <div class="modal" id="editStudentModal">
+                    <span class="close" onclick="toggleModal('#editStudentModal', '#modalOverlay')">&times;</span>
+                    <h3>Edit Student</h3>
+                    
+                    <label for="editStudentID">Student ID:</label>
+                    <input type="text" id="editStudentID" name="studentId" autocomplete="off" readonly required>
+                
+                    <label for="editFirstName">First Name:</label>
+                    <input type="text" id="editFirstName" name="firstName" autocomplete="off" required>
+                
+                    <label for="editLastName">Last Name:</label>
+                    <input type="text" id="editLastName" name="lastName" autocomplete="off" required>
+                
+                    <label for="editClassSelect">Class:</label>
+                    <select id="editClassSelect" name="class" required>
+                    </select>
+                
+                    <label for="editParentPhone">Parent's Phone Number:</label>
+                    <input type="tel" id="editParentPhone" name="parentPhone" autocomplete="off" required>
+                
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" name="email" autocomplete="off" required>
+                
+                    <label for="editGender">Gender:</label>
+                    <select id="editGender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                
+                    <button type="button" onclick="initializeEditStudents()">Save Changes</button>
+                    <button type="button" onclick="toggleModal('#editStudentModal', '#modalOverlay')">Cancel</button>
+                </div>
+                
+                
+                <div id="studentDetailsModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="toggleModal('#studentDetailsModal', '#modalOverlay')">&times;</span>
+                        <h2>Student Details</h2>
+                        <p><strong>Student ID:</strong> <span id="modalStudentID"></span></p>
+                        <p><strong>First Name:</strong> <span id="modalFirstName"></span></p>
+                        <p><strong>Last Name:</strong> <span id="modalLastName"></span></p>
+                        <p><strong>Class:</strong> <span id="modalClass"></span></p>
+                        <p><strong>Parent Phone Number:</strong> <span id="modalParentPhone"></span></p>
+                        <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+                        <p><strong>Gender:</strong> <span id="modalGender"></span></p>
+                        <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                    </div>
+                    <p>Fee History</p>
+                    <table id="feeTable"></table>
+                  </div>
+
+                <table id="activeStudentsTable">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Class</th>
+                            <th>Parent's Number</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activeStudents-container">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/students/allStudents.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/index.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('students');
+    </script>
+</body>
+</html>

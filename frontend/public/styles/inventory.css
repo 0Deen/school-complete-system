@@ -1,0 +1,26 @@
+@import '../styles/common.css';
+
+button.add-supplier-btn,
+.modal button[type="button"] {
+    background-color: #1c2a61;
+    color: #fff;
+}
+
+.add-inventory-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 30px;
+    background: #273A84;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(39, 58, 132, 0.3);
+    transition: all 0.3s ease;
+}
+
+.add-inventory-btn:hover {
+    background: #1c2a61;
+}

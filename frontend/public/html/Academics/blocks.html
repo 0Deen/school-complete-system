@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="../../styles/academics.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="blocks" class="section">
+                <h2>Block Section</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchBlock" placeholder="Search Block...">
+                </div>
+
+                <button class="add-btn" id="addBlockButton" onclick="toggleModal('#addBlockForm', '#modalOverlay')">+ Add Block</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal block-form" id="addBlockForm">
+                    <span id="closeAddBlockModal" class="close" onclick="toggleModal('#addBlockForm', '#modalOverlay')">&times;</span>
+                    <h3>Add Block</h3>
+                    <input type="text" id="blockName" name="blockName" placeholder="Enter block name e.g. Form / Grade" autocomplete="off" required>
+                    <input type="number" id="startRange" name="startRange" placeholder="Enter start value e.g. 1" autocomplete="off" required>
+                    <input type="number" id="endRange" name="endRange" placeholder="Enter end value e.g. 4" autocomplete="off" required>
+                    <button type="button" onclick="initializeAddBlockForm()">Add Block</button>
+                    <button type="button" onclick="toggleModal('#addBlockForm', '#modalOverlay')">Cancel</button>
+                </div>
+            
+                <div class="modal block-form" id="editBlockModal">
+                    <span class="close" onclick="toggleModal('#editBlockModal', '#modalOverlay')">&times;</span>
+                    <h3>Edit Block</h3>
+                    <form id="editBlockForm">
+                        <input type="hidden" id="editBlockId">
+                        <input type="text" id="editBlockName" name="editBlockName" placeholder="Form / Grade" autocomplete="off" required>
+                        <input type="number" id="editStartRange" name="startRange" placeholder="Enter start value e.g. 1" autocomplete="off" required>
+                        <input type="number" id="editEndRange" name="endRange" placeholder="Enter end value e.g. 4" autocomplete="off" required>
+                        <button type="submit" onclick="initializeEditBlockForm()">Update Block</button>
+                        <button type="button" onclick="toggleModal('#editBlockModal', '#modalOverlay')">Cancel</button>
+                    </form>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Block Name</th>
+                            <th>Range</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="block-container">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/academics/blocks.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('academics')
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../styles/login.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 id="form-title">Login</h2>
+
+        <div id="login-form">
+            <input type="email" id="email" placeholder="e.g. johndoe@gmail.com" autocomplete="off">
+            <input type="password" id="password" placeholder="*********" autocomplete="off">
+            <button type="button" onclick="login()">Login</button>
+            <p class="error-message" id="login-error-msg">Invalid credentials</p>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/common/login.js"></script>
+</body>
+</html>

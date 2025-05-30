@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="../../styles/finance.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="overview-container">
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/revenue.png" alt="revenue">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Total Revenue</h3>
+                        <div class="count" id="totalRevenue">KES 0.00</div>
+                        <div>This Month</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/expense.png" alt="Total Expenses">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Total Expenses</h3>
+                        <div class="count" id="totalExpenses">KES 0.00</div>
+                        <div>This Month</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/income.png" alt="Net Income">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Net Income</h3>
+                        <div class="count" id="netIncome">KES 0.00</div>
+                        <div>This Month</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/outstanding fees.png" alt="Outstanding Fees">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Outstanding Fees</h3>
+                        <div class="count" id="outstandingFees">KES 0.00</div>
+                        <div>Current Term</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/staff Payroll.png" alt="">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Staff Payroll</h3>
+                        <div class="count" id="staffPayroll"></div>
+                        <div>This Month</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/bank.png" alt="Total Account Balance">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Total Accounts Balance</h3>
+                        <div class="count" id="bankBalance"></div>
+                        <div>Current</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/pending payments.png" alt="Pending Payments">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Pending Payments</h3>
+                        <div class="count" id="pendingPayments">KES 0.00</div>
+                        <div>This Month</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/cash on hand.png" alt="Cash on Hand">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Cash on Hand</h3>
+                        <div class="count" id="cashOnHand">KES 0.00</div>
+                        <div>Current</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/overdue fees.png" alt="Overdue Fees">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Overdue Fees</h3>
+                        <div class="count" id="overdueFees">KES 0.00</div>
+                        <div>All Time</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/budget balance.png" alt="Budget Balance">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Budget Balance</h3>
+                        <div class="count" id="budgetBalance">KES 0.00</div>
+                        <div>This Year</div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/finance/overview.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('finance')
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import url('../styles/common.css');
+
+.add-position-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 30px;
+    background: #273A84;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(39, 58, 132, 0.3);
+    transition: all 0.3s ease;
+}
+
+.add-position-btn:hover {
+    background: #1c2a61;
+}
+
+#totalNetPay::before{
+    content: 'Ksh ';
+}
+
+#bonusInputsContainer input,
+#deductionsInputsContainer input {
+    margin-top: 5px;
+    display: block;
+    padding: 5px;
+    width: 200px;
+}
+
+button[type="button"] {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#addBonusContainer, #addDeductionsContainer {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.bonus-field, .deduction-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bonus-field input, .deduction-field input {
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.bonus-field button, .deduction-field button {
+    margin-left: 10px;
+}

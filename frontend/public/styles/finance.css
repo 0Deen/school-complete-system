@@ -1,0 +1,128 @@
+@import url('../styles/common.css');
+
+.add-account-btn,
+.add-transaction-btn,
+.add-bank-btn,
+.add-payment-btn,
+.add-pocket-money-btn,
+.add-po-btn,
+.add-supplier-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 30px;
+    background: #273A84;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(39, 58, 132, 0.3);
+    transition: all 0.3s ease;
+}
+
+.add-account-btn:hover,
+.add-transaction-btn:hover,
+.add-bank-btn:hover,
+.add-payment-btn:hover,
+.add-pocket-money-btn:hover,
+.add-po-btn:hover,
+.add-supplier-btn:hover {
+    background: #1c2a61;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.show,
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    width: 450px;
+    height: auto;
+    max-width: 95%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1001;
+    opacity: 0;
+}
+
+.modal.active {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.modal h3 {
+    color: black;
+    margin: 0 0 20px 0;
+    font-size: 1.5em;
+}
+
+.modal label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.modal input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.modal input:focus {
+    outline: none;
+    border-color: #273A84;
+}
+
+.modal button {
+    background: #273A84;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+button.add-supplier-btn,
+.modal button[type="button"] {
+    background-color: #1c2a61;
+    color: #fff;
+}
+
+.modal button[type="button"]:last-child {
+    background-color: #1c2a61;
+}
+
+.count::before{
+    content: 'Ksh ';
+}

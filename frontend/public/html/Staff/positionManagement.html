@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/staff.css">
+    <title>Staff</title>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div id="mainContent">
+            <div id="positionManagement" class="section">
+                <h2>General Position Management</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchPosition" placeholder="Search position...">
+                </div>
+            
+                <button class="add-position-btn" id="openAddPositionModalButton" onclick="toggleModal('#addPositionModal', '#modalOverlay')">+ Add Position</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="addPositionModal">
+                    <span id="closeAddPositionModal" class="close" onclick="toggleModal('#addPositionModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Position</h3>
+                    <form id="addPositionForm">
+                        <label for="positionName">Position Name:</label>
+                        <input type="text" id="positionName" name="positionName" autocomplete="off" required>
+            
+                        <button type="submit" onclick="initializeAddPositionForm()">Add Position</button>
+                        <button type="button" onclick="toggleModal('#addPositionModal', '#modalOverlay')">Cancel</button>
+                    </form>
+                </div>
+            
+                <div class="modal" id="editPositionModal">
+                    <span id="closeEditPositionModal" class="close" onclick="toggleModal('#editPositionModal', '#modalOverlay')">&times;</span>
+                    <h3>Edit Position</h3>
+                    <form id="editPositionForm">
+                        <input type="hidden" id="editPositionId">
+                        <label for="editPositionName">Position Name:</label>
+                        <input type="text" id="editPositionName" name="editPositionName" autocomplete="off" required>
+            
+                        <button type="submit" onclick="initializeEditPositionForm()">Update Position</button>
+                        <button type="button" onclick="toggleModal('#editPositionModal', '#modalOverlay')">Cancel</button>
+                    </form>
+                </div>
+            
+                <table id="positionManagementTable">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="position-container">
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/staff/positionManagement.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/index.js"></script>
+    <!-- <script src="../../js/common/navbarInit.js"></script> -->
+
+    <script>
+        renderNavBar('staff')
+    </script>
+</body>
+</html>

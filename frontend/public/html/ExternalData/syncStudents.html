@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Data</title>
+    <link rel="stylesheet" href="../../styles/externalData.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="syncStudentsSection" class="section">
+                <h2>Sync Students</h2>
+            
+                <button class="add-report-btn" id="syncStudentsButton" onclick="toggleModal('#studentSyncModal', '#modalOverlay')">+ Sync Student Data</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="studentSyncModal">
+                    <span id="closeStudentSyncModal" class="close" onclick="toggleModal('#studentSyncModal', '#modalOverlay')">&times;</span>
+                    <h3>Sync Student Data</h3>
+                    <form id="syncStudentsForm" onsubmit="syncStudents(event)">
+                        <label for="studentSyncFile">Upload Student Data File:</label>
+                        <input type="file" id="studentSyncFile" name="studentSyncFile" accept=".csv, .xls, .xlsx" required>
+                        <div class="modal-footer">
+                            <button type="submit">Sync</button>
+                            <button type="button" onclick="toggleModal('#studentSyncModal', '#modalOverlay')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/externalData/syncStudents.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('externalData')
+    </script>
+</body>
+</html>

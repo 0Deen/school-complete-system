@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Data</title>
+    <link rel="stylesheet" href="../../styles/externalData.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="container">
+                <div class="overview-container">
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/bank statement.png" alt="Bank Statements">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Bank Statements</h3>
+                            <div class="count" id="bankStatements">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/student sync.png" alt="Student Sync">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Student Sync</h3>
+                            <div class="count" id="syncedStudents">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/excel import.png" alt="Excel Imports">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Excel Imports</h3>
+                            <div class="count" id="excelImports">0</div>
+                        </div>
+                    </div>
+            
+                    <div class="overview-tile">
+                        <div class="tile-icon">
+                            <img src="../../assets/images/last import.png" alt="Last Import">
+                        </div>
+                        <div class="tile-content">
+                            <h3>Last Import</h3>
+                            <div class="count" id="lastImport">Never</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/externalData/overview.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('externalData')
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security</title>
+    <link rel="stylesheet" href="../../styles/settings.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="settings-container">
+                <div class="settings-header">
+                    <h2>Profile Settings</h2>
+                    <p>Manage your personal information and preferences</p>
+                </div>
+            
+                <div class="settings-section">
+                    <div class="settings-image">
+                        <img src="../../assets/default-avatar.png" alt="Profile Picture" id="profilePicture">
+                        <button class="change-photo-btn">Change Photo</button>
+                    </div>
+            
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <input type="text" id="role" name="role" readonly>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="text" id="department" name="department" readonly>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself"></textarea>
+                        </div>
+            
+                        <div class="button-group">
+                            <button type="button" class="save-btn" onclick="saveProfileChanges()">Save Changes</button>
+                            <button type="button" class="cancel-btn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/settings/overview.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('settings')
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activation</title>
+    <link rel="stylesheet" href="../../styles/settings.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="settings-container">
+                <div class="settings-header">
+                    <h2>System Activation</h2>
+                    <p>Enter your activation code to unlock the system features</p>
+                </div>
+                
+                <div class="settings-section">
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <h3>Enter Activation Code</h3>
+                            <div class="form-input">
+                                <label for="activationCode">Activation Code</label>
+                                <input type="text" id="activationCode" name="activationCode" placeholder="Enter your activation code">
+                            </div>
+                            <div class="button-group">
+                                <button type="button" class="save-btn" onclick="activateSystem()">Activate</button>
+                            </div>
+                            <div id="activationMessage" class="message">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <h3>Activation Status</h3>
+                            <div id="activationStatus" class="status-box">
+                                <p>Your system is currently <strong>not activated</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <h3>Contact Support</h3>
+                            <p>If you face issues with activation, contact our support team.</p>
+                            <a href="mailto:support@simba.com" class="secondary-btn">Email Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/common/activation.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('settings');
+    </script>
+</body>
+</html>

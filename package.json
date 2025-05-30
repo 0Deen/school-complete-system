@@ -1,0 +1,31 @@
+{
+  "name": "simba-systems",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run electron\"",
+    "backend": "nodemon backend/server.js",
+    "electron": "electron frontend/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "electron": "^33.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "pako": "^2.1.0",
+    "simba-systems": "file:",
+    "uuidv4": "^6.2.13"
+  }
+}

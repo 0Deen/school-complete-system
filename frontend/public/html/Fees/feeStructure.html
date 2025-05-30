@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees</title>
+    <link rel="stylesheet" href="../../styles/fees.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="feestructure" class="section">
+                <h2>Fee Structure</h2>
+
+                <label for="year-select">Select Year:</label>
+                <select id="year-select" class="select-dropdown">
+                </select>
+
+                <button class="generate-fee-btn" id="generateFeeStructureButton">Generate Fee Structure</button>
+            
+                <button class="add-fee-btn" id="printFeeStructureButton" style="display: none;">Print</button>
+            
+                <div class="pdf-container" id="pdf-container">
+                    <div class="letter-head"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/fees/feeStructure.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('fees');
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+@import url('../styles/common.css');
+
+button.add-supplier-btn,
+.modal button[type="button"] {
+    background-color: #1c2a61;
+    color: #fff;
+}
+
+.addBudgetBtn,
+.add-report-btn,
+.addOtherReceiptBtn,
+.addPaymentReportBtn,
+.addStudentReportBtn,
+.addSupplierReportBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 30px;
+    background: #273A84;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(39, 58, 132, 0.3);
+    transition: all 0.3s ease;
+}
+
+.addBudgetBtn:hover,
+.add-report-btn:hover,
+.addOtherReceiptBtn:hover,
+.addPaymentReportBtn:hover,
+.addStudentReportBtn:hover,
+.addSupplierReportBtn:hover {
+    background: #1c2a61;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1c2a61;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.select-dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.generate-btn {
+    background-color: #1a237e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+.report-preview {
+    margin-top: 20px;
+}
+
+.report-preview h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #1a237e;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar a {
+        font-size: 14px;
+    }
+
+    #mainContent {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .generate-btn {
+        width: 100%;
+    }
+}
+
+#report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#report-table th, #report-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#report-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+#generate-report {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#generate-report:hover {
+    background-color: #1a237e;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="../../styles/inventory.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="overview-container">
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/total products.png" alt="Total Products">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Total Products</h3>
+                        <p class="count" id="totalProducts"></p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/low stock.png" alt="Low Stock Items">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Low Stock Items</h3>
+                        <p class="count">15</p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/pending orders.png" alt="Pending Orders">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Pending Orders</h3>
+                        <p class="count">8</p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/categories.png" alt="Categories">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Categories</h3>
+                        <p class="count" id="totalCategories"></p>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/suppliers.png" alt="Suppliers">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Suppliers</h3>
+                        <p class="count" id="totalSuppliers"></p>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/inventory/overview.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('inventory')
+    </script>
+</body>
+</html>

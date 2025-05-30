@@ -1,0 +1,134 @@
+@import url('../styles/common.css');
+
+.settings-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.settings-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.settings-header p {
+    font-size: 16px;
+    color: #777;
+}
+
+.settings-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.form-input {
+    margin-bottom: 15px;
+}
+
+.form-input label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-input input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.account-status p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.account-status span {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.save-btn,
+.cancel-btn,
+.danger-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.save-btn:hover {
+    background-color: #0056b3;
+}
+
+.cancel-btn {
+    background-color: #ddd;
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background-color: #bbb;
+}
+
+.danger-btn {
+    background-color: #FF4D4F;
+    color: #fff;
+}
+
+.danger-btn:hover {
+    background-color: #cc0000;
+}
+
+@media (max-width: 768px) {
+    #mainContent {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .settings-container {
+        padding: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

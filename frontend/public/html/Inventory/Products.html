@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="../../styles/finance.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="accounts" class="section">
+                <h2>Inventory</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchProducts" placeholder="Search...">
+                </div>
+                
+                <div class="search-container">
+                    <select name="category" id="category"></select>
+                    </select>
+                </div>
+
+                <button class="add-account-btn" id="addProductButton" onclick="toggleModal('#addModal', '#modalOverlay')">+ Add Product</button>
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="addModal">
+                    <h3>Add Product</h3>
+
+                    <span class="close" onclick="toggleModal('#addModal', '#modalOverlay')">&times;</span>
+
+                    <label for="addName">Name:</label>
+                    <input type="text" name="addName" id="addName" placeholder="e.g. Furniture">
+
+                    <label for="addCategory">Category:</label>
+                    <select name="addCategory" id="addCategory"></select>
+
+                    <label for="addAmount">Amount:</label>
+                    <input type="text" name="addAmount" id="addAmount" placeholder="e.g. 5">
+
+                    <label for="addUnit">Unit</label>
+                    <input type="text" name="addUnit" id="addUnit" placeholder="e.g. Sack/Litres">
+
+                    <label for="addDescription">Description(Optional)</label>
+                    <input type="text" name="addDescription" id="addDescription">
+                    
+                    <button type="submit" onclick="createProduct()">Add Category</button>
+                    <button type="button" onclick="toggleModal('#addModal', '#modalOverlay')">Cancel</button>
+                </div>
+            
+                <div class="modal" id="editModal">
+                    <h3>Edit Product</h3>
+
+                    <span class="close" onclick="toggleModal('#editModal', '#modalOverlay')">&times;</span>
+
+                    <input type="hidden" name="editId" id="editId">
+
+                    <label for="editName">Name:</label>
+                    <input type="text" name="editName" id="editName">
+
+                    <label for="editCategory">Category:</label>
+                    <select name="editCategory" id="editCategory"></select>
+
+                    <label for="editAmount">Amount:</label>
+                    <input type="text" name="editAmount" id="editAmount">
+
+                    <label for="editUnit">Unit</label>
+                    <input type="text" name="editUnit" id="editUnit">
+
+                    <label for="editDescription">Description(Optional)</label>
+                    <input type="text" name="editDescription" id="editDescription">
+                    
+                    <button type="submit" onclick="editProduct()">Save Changes</button>
+                    <button type="button" onclick="toggleModal('#editModal', '#modalOverlay')">Cancel</button>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-container"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/inventory/product.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('inventory')
+    </script>
+</body>
+</html>

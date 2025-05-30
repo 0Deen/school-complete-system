@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees</title>
+    <link rel="stylesheet" href="../../styles/fees.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div class="overview-container">
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/fees.png" alt="Total Fees Collected">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Total Fees Collected</h3>
+                        <div class="count" id="totalFeesCollected">KES 0.00</div>
+                        <div>This Term</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/outstanding fees.png" alt="Outstanding Fees">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Outstanding Fees</h3>
+                        <div class="count" id="outstandingFees">KES 0.00</div>
+                        <div>Current Term</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/overdue fees.png" alt="Overdue Fees">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Overdue Fees</h3>
+                        <div class="count" id="overdueFees">KES 0.00</div>
+                        <div>All Terms</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/bursary allocation.png" alt="Bursary Allocations">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Bursary Allocations</h3>
+                        <div class="count" id="bursaryAllocations">KES 0.00</div>
+                        <div>This Term</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/students fee balance.png" alt="Students with Fee Balance">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Students with Fee Balance</h3>
+                        <div class="count" id="studentsWithBalance">0</div>
+                        <div>Current Term</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/fee reminder.png" alt="Fee Reminders Sent">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Fee Reminders Sent</h3>
+                        <div class="count" id="feeRemindersSent">0</div>
+                        <div>This Month</div>
+                    </div>
+                </div>
+            
+                <div class="overview-tile">
+                    <div class="tile-icon">
+                        <img src="../../assets/images/expected fees.png" alt="Expected Fees">
+                    </div>
+                    <div class="tile-content">
+                        <h3>Expected Fees</h3>
+                        <div class="count" id="expectedFees">KES 0.00</div>
+                        <div>This Term</div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/fees/overview.js"></script>
+    <script>
+        renderNavBar('fees')
+    </script>
+</body>
+</html>

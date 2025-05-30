@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="../../styles/academics.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+
+        <div id="mainContent">
+            <div id="terms" class="section">
+                <h2>Term Section</h2>
+
+                <div id="search-containers">
+                    <input type="text" id="searchTerm" placeholder="Enter term value...">
+                </div>
+
+                <button class="add-btn" id="addTermButton" onclick="toggleModal('#addTermForm', '#modalOverlayTerm')">+ Add Term</button>
+
+                <div class="modal-overlay" id="modalOverlayTerm"></div>
+                <div class="modal term-form" id="addTermForm">
+                    <span id="closeAddTermModal" class="close" onclick="toggleModal('#addTermForm', '#modalOverlayTerm')">&times;</span>
+                    <h3>Add Term</h3>
+
+                    <label for="year">Year</label>
+                    <select name="year" id="year"></select>
+
+                    <label for="term">Term</label>
+                    <select name="term" id="term"></select>
+
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" required>
+
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" required>
+
+                    <button type="button" onclick="initializeAddTerm()">Add Term</button>
+                    <button type="button" onclick="toggleModal('#addTermForm', '#modalOverlayTerm')">Cancel</button>
+                </div>
+
+                <div class="modal term-form" id="editTermForm">
+                    <span id="closeEditTermModal" class="close" onclick="toggleModal('#editTermForm', '#modalOverlayTerm')">&times;</span>
+                    <h3>Edit Term</h3>
+
+                    <input type="hidden" id="editTermId">
+
+                    <label for="editYear">Year</label>
+                    <select name="editYear" id="editYear" onchange="populateTermsByYear('edit')"></select>
+
+                    <label for="editTermName">Term</label>
+                    <select name="editTermName" id="editTermName"></select>
+
+                    <label for="editStartDate">Start Date</label>
+                    <input type="date" id="editStartDate" required>
+
+                    <label for="editEndDate">End Date</label>
+                    <input type="date" id="editEndDate" required>
+
+                    <button type="button" onclick="initializeEditTerm()">Save Changes</button>
+                    <button type="button" onclick="toggleModal('#editTermForm', '#modalOverlayTerm')">Cancel</button>
+                </div>
+
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Term</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="term-holder">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script type="text/javascript" src="../../js/academics/terms.js"></script>
+    <script type="text/javascript" src="../../js/common/navbar.js"></script>
+    <script src="../../js/common/common.js"></script>
+    <script>
+        renderNavBar('academics');
+    </script>
+</body>
+</html>

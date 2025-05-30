@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Reports</title>
+    <link rel="stylesheet" href="../../styles/reports.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="reportGeneration" class="section">
+                <h2>Generate Reports</h2>
+
+                <label for="report-type">Select Report Type:</label>
+                <select id="report-type" class="select-dropdown">
+                    <option value="">--Select Report Type--</option>
+                    <option value="payroll">Payroll</option>
+                    <option value="transaction">Transactions</option>
+                    <option value="students">Students</option>
+                    <option value="suppliers">Suppliers</option>
+                </select>
+
+                <button id="fetchReport" class="generate-btn">Fetch Report</button>
+
+                <div class="report-preview" id="report-preview">
+                    <h3>Report Preview</h3>
+                    <table>
+                        <thead id="reportTableHead"></thead>
+                        <tbody id="reportTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script src="../../js/report/report.js"></script>
+    <script>
+        renderNavBar('report');
+    </script>
+</body>
+</html>

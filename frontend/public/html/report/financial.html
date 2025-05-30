@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="../../styles/reports.css">
+</head>
+<body>
+    <div class="content">
+        <div class="navbar" id="navbar">
+            <img src="../../../public/assets/logo/SIMBA BLACK 2.png" class="image" alt="LOGO">
+            <div class="nav-links" id="nav-links"></div>
+        </div>
+        <div class="sidebar" id="sidebar"></div>
+        
+        <div id="mainContent">
+            <div id="financialReports" class="section">
+                <h2>Financial Reports</h2>
+                
+                <button class="add-report-btn" id="addReportButton" onclick="toggleModal('#reportModal', '#modalOverlay')">+ Add Report</button>
+            
+            
+                <div class="modal-overlay" id="modalOverlay"></div>
+                <div class="modal" id="reportModal">
+                    <span id="closeReportModal" class="close" onclick="toggleModal('#reportModal', '#modalOverlay')">&times;</span>
+                    <h3>Add Financial Report</h3>
+                    <form id="financialReportForm">
+                        <label for="reportDate">Report Date:</label>
+                        <input type="date" id="reportDate" required>
+            
+                        <label for="reportType">Report Type:</label>
+                        <input type="text" id="reportType" required>
+            
+                        <label for="totalRevenue">Total Revenue:</label>
+                        <input type="number" id="totalRevenue" required>
+            
+                        <label for="totalExpenses">Total Expenses:</label>
+                        <input type="number" id="totalExpenses" required>
+            
+                        <label for="netProfit">Net Profit:</label>
+                        <input type="number" id="netProfit" required>
+            
+                        <button type="submit">Add Report</button>
+                        <button type="button" onclick="toggleModal('#reportModal', '#modalOverlay')">Cancel</button>
+                    </form>
+                </div>
+                <table id="financialReportsTable">
+                    <thead>
+                        <tr>
+                            <th>Report Date</th>
+                            <th>Report Type</th>
+                            <th>Total Revenue</th>
+                            <th>Total Expenses</th>
+                            <th>Net Profit</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="financialReportsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/common/requests.js"></script>
+    <script src="../../js/report/financial.js"></script>
+    <script src="../../js/common/navbar.js"></script>
+    <script>
+        renderNavBar('report')
+    </script>
+</body>
+</html>
