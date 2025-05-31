@@ -3,7 +3,7 @@
 
 Simba Systems is a full-stack school management system built using **React.js** for the frontend and **Node.js + Express.js + MongoDB** for the backend. It offers features such as account management, employee records, events, inventory, and more.
 
----
+
 
 ## 🧱 Project Structure
 
