@@ -34,22 +34,4 @@ app.post('/login', async (req, res) => {
 
 app.get('/home', async (req, res) => {
     try {
-        const token = req.cookies.authtoken;
-
-        if (!token) {
-            return res.status(400).json({ error: "Unauthorized operation" });
-        }
-
-        const decoded = jwt.verify(token, SECRET_KEY);
-        const user = decoded.user;
-
-        return res.status(200).json(user);
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ error: "Invalid or expired token" });
-    }
-});
-
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
 });
